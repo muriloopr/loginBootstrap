@@ -1,0 +1,48 @@
+<div class="container my-5">
+  <app-header></app-header>
+
+  <div class="card shadow">
+    <div class="card-body">
+      <h4 class="card-title text-center mb-4">Login</h4>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': email?.invalid && email?.touched }"
+            placeholder="Digite seu email"
+          />
+          <div *ngIf="email?.touched && email?.invalid" class="invalid-feedback">
+            <div *ngIf="email?.errors?.['required']">O e-mail é obrigatório.</div>
+            <div *ngIf="email?.errors?.['email']">Formato de e-mail inválido.</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="senha" class="form-label">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            formControlName="senha"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': senha?.invalid && senha?.touched }"
+            placeholder="Digite sua senha"
+          />
+          <div *ngIf="senha?.touched && senha?.invalid" class="invalid-feedback">
+            A senha é obrigatória.
+          </div>
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Entrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>
