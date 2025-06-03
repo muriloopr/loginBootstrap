@@ -1,3 +1,32 @@
-body {
-  background-color: #f8f9fa;
+body.modo-escuro .card {
+  background-color: #343a40;
+  color: #f8f9fa;
+  border-color: #454d55;
+}
+
+body.modo-escuro .form-control {
+  background-color: #495057;
+  color: #f8f9fa;
+  border-color: #6c757d;
+}
+
+body.modo-escuro .form-control::placeholder {
+  color: #ced4da;
+}
+
+body.modo-escuro .form-control:focus {
+  background-color: #495057;
+  color: #fff;
+  border-color: #adb5bd;
+  box-shadow: none;
+}
+
+body.modo-escuro .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0a58ca;
+}
+
+body.modo-escuro .btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
 }

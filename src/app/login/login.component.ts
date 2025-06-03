@@ -11,6 +11,20 @@ import { FooterComponent } from '../footer/footer.component';
   templateUrl: './login.component.html',
 })
 export class LoginComponent {
+
+  modoEscuroAtivo: boolean = false;
+
+  alternarModoEscuro() {
+    this.modoEscuroAtivo = !this.modoEscuroAtivo;
+
+    if (this.modoEscuroAtivo) {
+      document.body.classList.add('modo-escuro');
+    } else {
+      document.body.classList.remove('modo-escuro');
+    }
+  }
+
+
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
